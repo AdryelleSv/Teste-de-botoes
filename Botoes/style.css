@@ -1,0 +1,86 @@
+body{
+    background-color: #151515;
+}
+h1{
+    color: #ff00cc;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+p{
+    color: #333399;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 800;
+    
+}
+.spinner{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+}
+
+.spinner::before,
+.spinner:after{
+
+    content: "";
+    position:absolute;
+    border-radius: inherit;
+}
+
+.spinner:before{
+  width: 100%;
+  height: 100%;
+  background-image:linear-gradient(0deg, #ff00cc 0%, #333399 100%);
+  animation:spin .5s infinite linear;
+
+}
+
+.spinner:after{
+ width: 85%;
+ height: 85%;
+ background-color: #151515;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* BOTAO PADRAO */
+
+.button{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:#ff00cc;
+    outline: 2px solid #fff;
+    padding: 30px 60px;
+    position: absolute;
+    overflow: hidden;
+    transition: color 1s;
+    border-radius: 8px;
+}
+.button:hover{
+    color: #333399;
+}
+
+.button::before{
+    content: "";
+    position:absolute;
+    top: 0;
+    left: -50px; 
+    width: 0;
+    height:100%;
+    background-color: #fff;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: width 1s;
+}
+
+.button:hover::before{
+    width: 150%;
+}
